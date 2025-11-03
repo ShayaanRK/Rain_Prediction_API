@@ -1,0 +1,20 @@
+{
+  "name": "rain_prediction_api",
+  "version": "1.0.0",
+  "description": "A full-stack Node.js project demonstrating real-time weather data fetching from public APIs. Built with Express, Axios, and EJS for learning API integration, server-side rendering, and dynamic UI rendering. Perfect for exploring backend-to-frontend data flow and testing public APIs.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "Shayaan Khan",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.1",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  },
+  "type": "module"
+}
