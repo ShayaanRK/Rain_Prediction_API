@@ -2,13 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Weather for <%= weather.city %></title>
+  <title>Weather in <%= weather.city %></title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f4f8; }
+    .card { background: #fff; padding: 20px; border-radius: 10px; max-width: 400px; margin: auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    img { vertical-align: middle; }
+    h1, h2 { text-align: center; }
+    p { margin: 5px 0; }
+    .info { display: flex; justify-content: space-between; }
+  </style>
 </head>
 <body>
-  <h1>Weather in <%= weather.city %></h1>
-  <img src="https://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="Weather Icon">
-  <p>Temperature: <%= weather.temp %>°C</p>
-  <p>Description: <%= weather.desc %></p>
-  <a href="/">Search again</a>
+  <div class="card">
+    <h1>Weather in <%= weather.city %></h1>
+    <div style="text-align:center;">
+      <img src="https://openweathermap.org/img/wn/<%= weather.icon %>@2x.png" alt="Weather Icon">
+      <p><strong><%= weather.description %></strong></p>
+    </div>
+    <p>Temperature: <%= weather.temp %>°C (Feels like <%= weather.feels_like %>°C)</p>
+    <div class="info">
+      <p>Humidity: <%= weather.humidity %>%</p>
+      <p>Wind: <%= weather.wind_speed %> m/s</p>
+    </div>
+    <div class="info">
+      <p>Clouds: <%= weather.clouds %>%</p>
+      <p>UV Index: <%= weather.uvi %></p>
+    </div>
+    <p>Sunrise: <%= new Date(weather.sunrise * 1000).toLocaleTimeString() %></p>
+    <p>Sunset: <%= new Date(weather.sunset * 1000).toLocaleTimeString() %></p>
+    <p style="text-align:center;"><a href="/">Search again</a></p>
+  </div>
 </body>
 </html>
